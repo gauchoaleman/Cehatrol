@@ -21,9 +21,7 @@ class Posts extends Controller
     ->where('user_id',$user_id)->orderBy('post_title', 'asc')->get();
 
     try {
-        //check if
         if(!sizeof($posts)) {
-          //throw exception if email is not valid
           throw new customException();
         }
       }
