@@ -20,6 +20,20 @@ class Posts extends Controller
     ->select('posts.title as post_title', 'posts.content as post_content')
     ->where('user_id',$user_id)->orderBy('post_title', 'asc')->get();
 
+    try {
+        //check if
+        if(!sizeof($posts)) {
+          //throw exception if email is not valid
+          throw new customException();
+        }
+      }
+
+      catch (customException $e) {
+        //display custom message
+        echo $e->errorMessage();
+        exit();
+      }
+
     foreach ($posts as $post) {
         //$user_array = array($user);
         if (strlen($post->post_title)>=20) {
@@ -29,6 +43,6 @@ class Posts extends Controller
       }
 
     $data["json"] = json_encode($posts);
-    return view("posts",$data);
+    return view("json",$data);
   }
 }
