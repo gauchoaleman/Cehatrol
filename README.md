@@ -7,3 +7,4 @@ Task for CEHATROL TECHNOLOGY eG.
   * php artisan migrate
 * Start Laravel server
   * php artisan serve or php artisan serve --port=port_number
+* Show data script: show_data.html
