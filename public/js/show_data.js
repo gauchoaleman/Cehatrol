@@ -1,7 +1,6 @@
 const users_url = 'http://'+window.location.host+'/users';
 const posts_url = 'http://'+window.location.host+'/posts';
 const table = $('#myData');
-console.log(window.location.host);
 /**
  * Fetches the users + their posts and adds rows to the main table.
  */
@@ -53,10 +52,7 @@ async function fetchPosts(user_id) {
 const btn = document.getElementById('btn');
 
 btn.addEventListener('click', () => {
-  // 👇️ hide button
   btn.style.display = 'none';
-
-  // 👇️ show div
   const box = document.getElementById('box');
   box.style.display = 'block';
 });
